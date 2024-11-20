@@ -22,14 +22,13 @@ class Weather:
                 },
             )
             if response.status_code == 200:
-                
-               
+                self.clear_terminal()
                 # i+=1
                 # print("eeeee",i)
                 # print (response.json())
                 weather_data = response.json()["current_weather"]
                 # print("eeeee")
-                self.clear_terminal()
+                
                 formatted_data = {
                     "Température (°C)": weather_data["temperature"],
                     "Vent (km/h)": weather_data["windspeed"]
@@ -39,7 +38,7 @@ class Weather:
                 print(f"Température : {weather_data['temperature']}°C")
                 print("="*40)
                 print(f"Vitesse du vent : {weather_data['windspeed']} km/h")
-                return formatted_data
+                # return formatted_data
             else:
                 print("Erreur lors de la récupération des données météo.")
             time.sleep(refresh_delay)
@@ -86,7 +85,7 @@ class Weather:
                     f"Vent : {weather_data['windspeed_10m'][i]} km/h, "
                     f"Humidité : {weather_data['relativehumidity_2m'][i]}%"
                 )
-            return formatted_data    
+            # return formatted_data    
         else:
             print("Erreur lors de la récupération des données météo.")           
             
@@ -94,4 +93,4 @@ class Weather:
 if __name__ == "__main__":
     weather = Weather()
     weather.display_current_weather((48.8566, 2.3522), refresh_delay=5)
-    weather.display_past_weather((48.8566, 2.3522), "2024-11-01T00:00", "2024-11-05T23:59")
+    # weather.display_past_weather((48.8566, 2.3522), "2024-11-01T00:00", "2024-11-05T23:59")

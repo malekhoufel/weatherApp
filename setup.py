@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="malekhoufel_weather_app",
-    version="0.2.0",
+    version="0.4.0",
     author="Malek",
     author_email="abdelmalek.houfel@sinay.fr",
     description="application météo",
