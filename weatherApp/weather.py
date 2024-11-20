@@ -32,8 +32,7 @@ class Weather:
                 self.clear_terminal()
                 formatted_data = {
                     "Température (°C)": weather_data["temperature"],
-                    "Vent (km/h)": weather_data["windspeed"],
-                    "Humidité (%)": weather_data["relativehumidity"]
+                    "Vent (km/h)": weather_data["windspeed"]
                 }
                 print (weather_data)
                 print("="*40)
@@ -94,5 +93,5 @@ class Weather:
 
 if __name__ == "__main__":
     weather = Weather()
-    # weather.display_current_weather((48.8566, 2.3522), refresh_delay=5)
+    weather.display_current_weather((48.8566, 2.3522), refresh_delay=5)
     weather.display_past_weather((48.8566, 2.3522), "2024-11-01T00:00", "2024-11-05T23:59")
